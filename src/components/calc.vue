@@ -1,10 +1,14 @@
 <template>
   <div>
+    <div id="result">
+        <h2 id="rsltttl">結果</h2>
+        <p><span id="koharai"></span><span id="sep">/</span><span id="oyaharai"></span></p>
+    </div>
     <form id="form">
       <h2>役</h2>
         <div class="box">
           <div class="item">
-            <input name='1han' type="checkbox" value="立直" checked="checked" />立直<br>
+            <input name="1han" type="checkbox" value="立直" checked="checked" />立直<br>
             <input name="1han" type="checkbox" value="一発" />一発<br>
             <input name="1han" type="checkbox" value="門前清自摸和" />門前清自摸和<br>
             <input name="1han" type="checkbox" value="役牌" />役牌<br>
@@ -40,60 +44,76 @@
             <input name="6han" type="checkbox" value="清一色" />清一色
           </div>
         </div>
-      <h2>上がり</h2>
-        <input name="agari" type="radio" value="lon" checked="checked" />ロン
-        <input name="agari" type="radio" value="tsumo" />ツモ
-      <h2>親/子</h2>
-        <input name="oyako" type="radio" value="oya" checked="checked" />親
-        <input name="oyako" type="radio" value="ko" />子
-      <h2>鳴き</h2>
-        <input name="naki" type="radio" value="ari" checked="checked" />有り
-        <input name="naki" type="radio" value="nashi" />無し
-      <h2>面子（中張牌）</h2>
-      <span>明刻</span>
-      <input name="chMinko" type="button" value="＋" id="chMinkoUp" />
-      <input name="chMinko" type="button" value="リセット" id="chMinkoDown" />
-      <input name="chMinko" type="text" value="0" id="chMinkoDisp" />
-      <br>
-      <span>暗刻</span>
-      <input name="chAnko" type="button" value="＋" id="chAnkoUp" />
-      <input name="chAnko" type="button" value="リセット" id="chAnkoDown" />
-      <input name="chAnko" type="text" value="0" id="chAnkoDisp" />
-      <br>
-      <span>明槓</span>
-      <input name="chMinkan" type="button" value="＋" id="chMinkanUp" />
-      <input name="chMinkan" type="button" value="リセット" id="chMinkanDown" />
-      <input name="chMinkan" type="text" value="0" id="chMinkanDisp" />
-      <br>
-      <span>暗槓</span>
-      <input name="chAnkan" type="button" value="＋" id="chAnkanUp" />
-      <input name="chAnkan" type="button" value="リセット" id="chAnkanDown" />
-      <input name="chAnkan" type="text" value="0" id="chAnkanDisp" />
-      <h2>面子（幺九牌）</h2>
-      <span>明刻</span>
-      <input name="yoMinko" type="button" value="＋" id="yoMinkoUp" />
-      <input name="yoMinko" type="button" value="リセット" id="yoMinkoDown" />
-      <input name="yoMinko" type="text" value="0" id="yoMinkoDisp" />
-      <br>
-      <span>暗刻</span>
-      <input name="yoAnko" type="button" value="＋" id="yoAnkoUp" />
-      <input name="yoAnko" type="button" value="リセット" id="yoAnkoDown" />
-      <input name="yoAnko" type="text" value="0" id="yoAnkoDisp" />
-      <br>
-      <span>明槓</span>
-      <input name="yoMinkan" type="button" value="＋" id="yoMinkanUp" />
-      <input name="yoMinkan" type="button" value="リセット" id="yoMinkanDown" />
-      <input name="yoMinkan" type="text" value="0" id="yoMinkanDisp" />
-      <br>
-      <span>暗槓</span>
-      <input name="yoAnkan" type="button" value="＋" id="yoAnkanUp" />
-      <input name="yoAnkan" type="button" value="リセット" id="yoAnkanDown" />
-      <input name="yoAnkan" type="text" value="0" id="yoAnkanDisp" />
-      <h2>ドラ</h2>
-      <span>ドラ数</span>
-      <input name="dora" type="button" value="＋" id="doraUp" />
-      <input name="dora" type="button" value="リセット" id="doraDown" />
-      <input name="dora" type="text" value="0" id="doraDisp" />
+      <div class="box">
+        <div class="item">
+          <h2>上がり</h2>
+            <input name="agari" type="radio" value="lon" checked="checked" />ロン
+            <input name="agari" type="radio" value="tsumo" />ツモ
+        </div>
+        <div class="item">
+          <h2>親/子</h2>
+            <input name="oyako" type="radio" value="oya" checked="checked" />親
+            <input name="oyako" type="radio" value="ko" />子
+        </div>
+        <div class="item">
+          <h2>鳴き</h2>
+            <input name="naki" type="radio" value="ari" checked="checked" />有り
+            <input name="naki" type="radio" value="nashi" />無し
+        </div>
+      </div>
+      <div class="box">
+        <div class="item">
+          <h2>面子（中張牌）</h2>
+          <span>明刻</span>
+          <input name="chMinko" type="button" value="＋" id="chMinkoUp" />
+          <input name="chMinko" type="button" value="リセット" id="chMinkoDown" />
+          <input name="chMinko" type="text" value="0" id="chMinkoDisp" />
+          <br>
+          <span>暗刻</span>
+          <input name="chAnko" type="button" value="＋" id="chAnkoUp" />
+          <input name="chAnko" type="button" value="リセット" id="chAnkoDown" />
+          <input name="chAnko" type="text" value="0" id="chAnkoDisp" />
+          <br>
+          <span>明槓</span>
+          <input name="chMinkan" type="button" value="＋" id="chMinkanUp" />
+          <input name="chMinkan" type="button" value="リセット" id="chMinkanDown" />
+          <input name="chMinkan" type="text" value="0" id="chMinkanDisp" />
+          <br>
+          <span>暗槓</span>
+          <input name="chAnkan" type="button" value="＋" id="chAnkanUp" />
+          <input name="chAnkan" type="button" value="リセット" id="chAnkanDown" />
+          <input name="chAnkan" type="text" value="0" id="chAnkanDisp" />
+        </div>
+        <div class="item">
+          <h2>面子（幺九牌）</h2>
+          <span>明刻</span>
+          <input name="yoMinko" type="button" value="＋" id="yoMinkoUp" />
+          <input name="yoMinko" type="button" value="リセット" id="yoMinkoDown" />
+          <input name="yoMinko" type="text" value="0" id="yoMinkoDisp" />
+          <br>
+          <span>暗刻</span>
+          <input name="yoAnko" type="button" value="＋" id="yoAnkoUp" />
+          <input name="yoAnko" type="button" value="リセット" id="yoAnkoDown" />
+          <input name="yoAnko" type="text" value="0" id="yoAnkoDisp" />
+          <br>
+          <span>明槓</span>
+          <input name="yoMinkan" type="button" value="＋" id="yoMinkanUp" />
+          <input name="yoMinkan" type="button" value="リセット" id="yoMinkanDown" />
+          <input name="yoMinkan" type="text" value="0" id="yoMinkanDisp" />
+          <br>
+          <span>暗槓</span>
+          <input name="yoAnkan" type="button" value="＋" id="yoAnkanUp" />
+          <input name="yoAnkan" type="button" value="リセット" id="yoAnkanDown" />
+          <input name="yoAnkan" type="text" value="0" id="yoAnkanDisp" />
+        </div>
+        <div class="item">
+          <h2>ドラ</h2>
+          <span>ドラ数</span>
+          <input name="dora" type="button" value="＋" id="doraUp" />
+          <input name="dora" type="button" value="リセット" id="doraDown" />
+          <input name="dora" type="text" value="0" id="doraDisp" />
+        </div>
+      </div>
       <h2>雀頭</h2>
       <input name="janto" type="radio" value="jibasanngen" checked="checked" />自風/場風/三元
       <input name="janto" type="radio" value="renpu" />連風
@@ -102,9 +122,8 @@
       <input name="machi" type="radio" value="penkantanno" checked="checked" />辺張/嵌張/単騎/ノベタン
       <input name="machi" type="radio" value="sonota" />両面/シャボ
       <br>
-      <input type="submit" value="CALC"/>
+      <input id="clcbtn" type="submit" value="CALC"/>
     </form>
-    <p>ここに結果表示</p>
   </div>
 </template>
 
@@ -446,7 +465,6 @@ window.onload = function () {
     }
     return params
   })()
-  console.log(query)
 
   // //////// //
   // 計算処理 //
@@ -725,6 +743,20 @@ window.onload = function () {
   }
   console.log(koHarai)
   console.log(oyaHarai)
+  // 結果表示 //
+  if (kisoten > 0) {
+    document.getElementById('result').style.display = 'block'
+    document.getElementById('rsltttl').style.visibility = 'visible'
+    if (koHarai !== '' && oyaHarai !== '' && koHarai > 0 && oyaHarai > 0) {
+      document.getElementById('sep').style.visibility = 'visible'
+    }
+    if (koHarai > 0) {
+      document.getElementById('koharai').textContent = koHarai
+    }
+    if (oyaHarai > 0) {
+      document.getElementById('oyaharai').textContent = oyaHarai
+    }
+  }
 }
 </script>
 
@@ -737,5 +769,20 @@ window.onload = function () {
   }
   .item {
     text-align: left;
+  }
+  #result {
+    text-align: center;
+    display: none;
+  }
+  #rsltttl, #sep {
+    visibility: hidden;
+  }
+  #form {
+    padding-bottom: 20px;
+  }
+  #clcbtn {
+    width: 150px;
+    height: 80px;
+    font-size: 20px;
   }
 </style>
